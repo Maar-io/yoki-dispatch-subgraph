@@ -1,0 +1,35 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: YokiDispatch
+    network: astar-zkevm-mainnet
+    source:
+      address: "0xCB1095416b6A8e0C3ea39F8fe6Df84f4179C93C2"
+      abi: YokiDispatch
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - MultiMinted
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+      abis:
+        - name: YokiDispatch
+          file: ./abis/YokiDispatch.json
+      eventHandlers:
+        - event: MultiMinted(address,address,address,address,uint256,uint256)
+          handler: handleMultiMinted
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+      file: ./src/yoki-dispatch.ts

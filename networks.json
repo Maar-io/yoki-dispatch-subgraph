@@ -1,0 +1,8 @@
+{
+  "astar-zkevm-mainnet": {
+    "YokiDispatch": {
+      "address": "0xCB1095416b6A8e0C3ea39F8fe6Df84f4179C93C2",
+      "startBlock": 0
+    }
+  }
+}
