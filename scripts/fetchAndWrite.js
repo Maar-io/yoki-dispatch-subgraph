@@ -60,7 +60,7 @@ const fetchAndWrite = async (
 
   await fetchPage(0);
   console.log(
-    `(${totalResults}) ${fileName}:issued ${omaNumber} OMA, compensate ${compensateOma} OMA`
+    `(${totalResults}) ${fileName}: issued ${omaNumber} OMA, compensate ${compensateOma} OMA`
   );
   csvData = csvData.map((item) => [item.to, compensateOma]);
   const json2csvParser = new Parser({ header: false });
