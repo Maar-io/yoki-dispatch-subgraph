@@ -3,4 +3,7 @@ node_modules
 build/
 generated/
 scripts/output/
-
+output/
+output.json
+compensation_data.json
+.pending

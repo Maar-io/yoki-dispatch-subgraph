@@ -8,13 +8,18 @@
     "create-local": "graph create --node http://localhost:8020/ yokidispatch",
     "remove-local": "graph remove --node http://localhost:8020/ yokidispatch",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 yokidispatch",
-    "test": "graph test"
+    "test": "graph test",
+    "compensate": "ts-node -P ./tsconfig.script.json scripts/sendOma.ts"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.67.1",
     "@graphprotocol/graph-ts": "0.32.0",
     "axios": "^1.6.8",
-    "json2csv": "^6.0.0-alpha.2"
+    "json2csv": "^6.0.0-alpha.2",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1",
+    "ts-node": "10.9.2",
+    "typescript": "^5.4.3"
   },
   "devDependencies": {
     "matchstick-as": "0.5.0"
