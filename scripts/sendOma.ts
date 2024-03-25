@@ -26,6 +26,7 @@ const CURSOR_PATH = path.resolve(__dirname, ".pending");
 const YOKI_ABI = [
   "function safeTransferFrom(address from, address to, uint256 tokenId, uint256 value, bytes data)",
   "function balanceOf(address owner, uint256 id) view returns (uint256)",
+  "function adminMint(address to, uint256 id, uint256 amount)",
 ];
 
 const PROVIDER = new ethers.JsonRpcProvider(RPC_URL);
